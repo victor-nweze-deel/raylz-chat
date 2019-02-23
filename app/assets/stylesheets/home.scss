@@ -56,6 +56,10 @@ $gray: #92959E;
     border-bottom: 2px solid white;
     overflow-y: scroll;
     height: 575px;
+
+    > ul {
+      list-style: none;
+    }
     
     .message-data {
       margin-bottom: 15px;
