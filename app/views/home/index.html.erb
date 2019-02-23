@@ -26,6 +26,9 @@ Message
       const msg = $('#msg').val()
       const username = $('#user_name').val()
 
+      // Log out chat information to the console
+      console.log("Username: ", username, " Message: ", msg)
+
       // SEND MESSAGE FROM CHAT JS INITIALIZATIONS
       App.chat.send_msg({ username ,msg })
     })
