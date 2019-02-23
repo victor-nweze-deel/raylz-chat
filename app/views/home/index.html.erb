@@ -1,0 +1,33 @@
+Chat app:
+<br>
+<span id="chat"></span>
+<hr>
+Message
+<br>
+<%= text_field_tag (:user_name) %>
+<%= text_area_tag (:msg) %>
+<hr>
+<button id="send">Send Message</button>
+
+<script>
+  $(document).ready(function () {
+    // RECEIVE MESSAGES
+    App.chat.received = function(data)
+    {
+      const username = data['message'].username
+      const message = data['message'].msg
+      const msg_block = '<p>' + username + ': ' + message + '</p>'
+      $('#chat').append(msg_block)
+    }
+
+    // EVENT HANDLER TO SEND MESSAGES IN THE ROOM
+    $("#send").click(function ()
+    {
+      const msg = $('#msg').val()
+      const username = $('#user_name').val()
+
+      // SEND MESSAGE FROM CHAT JS INITIALIZATIONS
+      App.chat.send_msg({ username ,msg })
+    })
+  })
+</script>
