@@ -94,4 +94,7 @@ Rails.application.configure do
 
   # websockets server url
   config.web_socket_server_url = "wss://rails-chat-with-cable.herokuapp.com/cable"
+
+  # allowed origins
+  config.action_cable.allowed_request_origins = ['https://rails-chat-with-cable.herokuapp.com']
 end
