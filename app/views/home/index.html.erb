@@ -29,8 +29,6 @@
     {
       const raw_username = data['message'].username
       const message = data['message'].msg
-      if(!raw_username.trim() || !message.trim())
-        return alert('Input values before sending')
         
       const username = raw_username.toLowerCase()
       if(
@@ -75,6 +73,8 @@
     {
       const msg = $('#message-to-send').val()
       const username = $('#user_name').val()
+      if(!username.trim() || !msg.trim())
+        return alert('Input values before sending')
 
       // SEND MESSAGE FROM CHAT JS INITIALIZATIONS
       App.chat.send_msg({ username ,msg })
