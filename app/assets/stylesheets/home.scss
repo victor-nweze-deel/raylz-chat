@@ -55,7 +55,7 @@ $gray: #92959E;
     padding: 30px 30px 20px;
     border-bottom: 2px solid white;
     overflow-y: scroll;
-    height: 575px;
+    height: 375px;
 
     > ul {
       list-style: none;
@@ -127,7 +127,11 @@ $gray: #92959E;
     input {
       width: 200px;
       height: 25px;
-      border-radius: 5px;
+      font-family: Lato, Arial, sans-serif;
+      font-size: 0.8rem;
+      padding: 0px 20px;
+      border: none;
+      border-bottom: 1px solid #ccc!important;
     }
     
     button {

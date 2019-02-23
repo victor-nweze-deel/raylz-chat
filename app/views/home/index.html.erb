@@ -23,11 +23,15 @@
 
 <script>
   $(document).ready(function () {
+    const chat_history = $('.chat-history')
     // RECEIVE MESSAGES
     App.chat.received = function(data)
     {
       const raw_username = data['message'].username
       const message = data['message'].msg
+      if(!raw_username.trim() || !message.trim())
+        return alert('Input values before sending')
+        
       const username = raw_username.toLowerCase()
       if(
         username == 'jigsaw' || username == 'jiggy' ||
@@ -61,6 +65,9 @@
         `
       }
       $('#chat-box-container').append(message_block)
+        chat_history.animate({
+          scrollTop: chat_history.get(0).scrollHeight
+      }, 2000)
     }
 
     /* EVENT HANDLER TO SEND MESSAGES IN THE ROOM */
