@@ -26,3 +26,4 @@ This app uses the following:
   - Push to Heroku with `git push heroku master -a <app-name>`
   - Open up the application with `heroku open -a <app-name>`
 
+* The Styling motivation for this application can be found [here](https://codepen.io/drehimself/pen/KdXwxR)
