@@ -23,7 +23,19 @@
 
 <script>
   $(document).ready(function () {
+
+    // GET CHAT HISTORY CONTAINER
     const chat_history = $('.chat-history')
+
+    // GET FORMATTED DATE
+    const getDate = function () {
+      return new Date().toLocaleString('en-US', {
+        hour: 'numeric',
+        minute: 'numeric',
+        hour12: true
+      })
+    }
+
     // RECEIVE MESSAGES
     App.chat.received = function(data)
     {
@@ -41,7 +53,7 @@
           <li>
             <div class="message-data">
               <span class="message-data-name"><i class="fa fa-circle online"></i> ${raw_username}</span>
-              <span class="message-data-time">10:12 AM, Today</span>
+              <span class="message-data-time">${getDate()}, Today</span>
             </div>
             <div class="message my-message">
               ${message}
@@ -52,7 +64,7 @@
         message_block = `
           <li class="clearfix">
             <div class="message-data align-right">
-              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-time" >${getDate()}, Today</span> &nbsp; &nbsp;
               <span class="message-data-name" >${username}</span> <i class="fa fa-circle me"></i>
               
             </div>
