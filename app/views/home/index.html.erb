@@ -39,7 +39,7 @@
     // RECEIVE MESSAGES
     App.chat.received = function(data)
     {
-      const raw_username = data['message'].username
+      const raw_username = data['message'].username.trim()
       const message = data['message'].msg
         
       const username = raw_username.toLowerCase()
